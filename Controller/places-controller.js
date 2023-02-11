@@ -29,7 +29,7 @@ const getPlaceById = async (req, res, next) => {
 
   if (!place) {
     const error = new HttpError(
-      "Could Not Find a place with this for the provided place id, May be the user is yet to add some Places ! ",
+      "Could Not Find a place with t the provided place id, May be the user is yet to add some Places ! ",
       404
     );
 
