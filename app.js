@@ -20,14 +20,11 @@ app.use(bodyParse.json());
 app.use("/uploads/images", express.static(path.join("uploads", "images")));
 
 //Middleware for Handling CORS Error in Frontend
-app.use((req, res, next) => {
+app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Orgin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PATCH,DELETE");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", true);
   next();
 });
 
